@@ -1,0 +1,31 @@
+#!/usr/bin/python
+import sqlite3
+
+conn = sqlite3.connect('chinook.db')
+print "Opened database successfully";
+
+
+#Here we pull the data, now we pull only Name from the Artists table
+
+
+
+#                               0           1           2       3
+cursor = conn.execute("SELECT FirstName,LastName, CustomerId, Address from Customers")
+for row in cursor:
+    #This is the presentation of the data, hence the PRINT function
+   print "FirstName, = ", row[0]
+   print "LastName, is in the secound column here -> = ", row[1]
+   print "CustomerId, is in the third column here -> = ", row[2]
+   print "\n" #a newline ()
+
+print "i love you"
+
+
+#if you want the other values you need to select the datafields for themm
+#as you can see we only now get value 0 from row
+
+
+
+
+print "Operation done successfully";
+conn.close()
